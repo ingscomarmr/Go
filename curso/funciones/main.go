@@ -5,8 +5,15 @@ import (
 )
 
 func main() {
-	diHola()
-	saludar("Omar", 31) //pasar parametros a una funcion
+	//diHola()
+	//saludar("Omar", 31) //pasar parametros a una funcion
+
+	nums := []int{100, 500, -9, 56, 24}
+	max, min := maxYmin(nums)
+	fmt.Printf("Numero Maximo:%d, Minimo:%d\n", max, min)
+
+	max, min = maxYmin2(nums)
+	fmt.Printf("Numero Maximo:%d, Minimo:%d\n", max, min)
 }
 
 //una funcion se declara con la palabra reservada func
@@ -43,4 +50,36 @@ func edadPersonaDesc(edad uint8) string {
 //si los parametros son del mismo tipo se puede acoortar la firma de la funcion
 func suma(a, b int) int {
 	return a + b
+}
+
+//funcion de retorno multiple
+func maxYmin(numeros []int) (int, int) { //indicamos los tipos que va retornar (int, int)
+	var max, min int
+
+	for _, v := range numeros {
+		if v > max {
+			max = v
+		}
+
+		if v < min {
+			min = v
+		}
+	}
+
+	return max, min //indicamos el orden en el que se debe retornar
+}
+
+//funcion de retorno multiple version mas corta y mas definida
+func maxYmin2(numeros []int) (max int, min int) { //indicamos los tipos y nombre que va retornar (int, int)
+	for _, v := range numeros {
+		if v > max {
+			max = v
+		}
+
+		if v < min {
+			min = v
+		}
+	}
+
+	return //ya no necesita return porque ya le indicamos como va retornar y que orden
 }
