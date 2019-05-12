@@ -8,12 +8,14 @@ func main() {
 	//diHola()
 	//saludar("Omar", 31) //pasar parametros a una funcion
 
-	nums := []int{100, 500, -9, 56, 24}
-	max, min := maxYmin(nums)
-	fmt.Printf("Numero Maximo:%d, Minimo:%d\n", max, min)
+	//nums := []int{100, 500, -9, 56, 24}
+	//max, min := maxYmin(nums)
+	//fmt.Printf("Numero Maximo:%d, Minimo:%d\n", max, min)
 
-	max, min = maxYmin2(nums)
-	fmt.Printf("Numero Maximo:%d, Minimo:%d\n", max, min)
+	//max, min = maxYmin2(nums)
+	//fmt.Printf("Numero Maximo:%d, Minimo:%d\n", max, min)
+
+	saludarCumpleaneros("Abril", 4, "Omar", "Lesly", "Joel", "Sevas")
 }
 
 //una funcion se declara con la palabra reservada func
@@ -82,4 +84,18 @@ func maxYmin2(numeros []int) (max int, min int) { //indicamos los tipos y nombre
 	}
 
 	return //ya no necesita return porque ya le indicamos como va retornar y que orden
+}
+
+/*
+*	funciones variaticas
+*	Puede recivir varios parametros de entrada de forma variada, y se declaran de la siguiente forma "[nombre] ...[tipo]"
+*	Estas funciones solo pueden tener un unico parametro variatico y debe estar al final de la funcion
+*	El parametro se combiente en automatico en un slide
+ */
+func saludarCumpleaneros(mes string, dia uint8, nombre ...string) {
+	fmt.Printf("%T\n", nombre) //imprimir el tipo de datos
+	fmt.Printf("Hoy %d  de %s, cumplen años :\n", dia, mes)
+	for _, nom := range nombre {
+		fmt.Printf("* %s\n", nom)
+	}
 }
