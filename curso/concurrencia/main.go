@@ -14,12 +14,13 @@ import (
  */
 
 func main() {
+	//la rutina se ejecutara mientras el programa este vivo, en este caso si no hay mas codigo no se ejecuta nada
 	go mostrarNumeros() //le indicamos a go que queremos ejecutar esta funcion como una rutina
-
-	/*var input string
+	//si la funcion main llega al final, rompe con todas las rutinas..
+	var input string
 	fmt.Print("Introduce un texto:")
 	fmt.Scan(&input)
-	fmt.Println("Introduciste esto:", input)*/
+	fmt.Println("Introduciste esto:", input)
 }
 
 func mostrarNumeros() {
