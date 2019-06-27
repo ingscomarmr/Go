@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mi primer reder con go</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th style="background-color: black;color: aqua;">Nombre</th>
+            <th style="background-color: black;color: aqua;">Edad</th>
+        </tr>
+        <tr>
+            <td>
+                {{.Nombre}} <!--para que go ponga los datos solo se deben de agregar dobole comillas mas "." y el nombre de la propiedad-->
+            </td>
+            <td>
+                {{.Edad}}
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
